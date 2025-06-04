@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 271 91% 65%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 271 91% 65%;
+  --radius: 0.5rem;
+  
+  /* Custom colors for Schickimicki Club - cool and modern */
+  --accent-primary: 210 40% 70%;
+  --accent-secondary: 45 15% 85%;
+  --electric-blue: 200 80% 60%;
+  --cool-gray: 220 15% 25%;
+  --warm-gray: 30 8% 15%;
+  --dark-bg: 220 20% 8%;
+  --light-accent: 45 20% 90%;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hover-menu-wrapper:hover .hover-menu {
+  transition-delay: 0s;
+}
+
+.hover-menu-wrapper .hover-menu {
+  transition-delay: 100ms;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 271 91% 65%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 271 91% 65%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-accent-primary {
+    color: hsl(var(--accent-primary));
+  }
+  
+  .text-accent-secondary {
+    color: hsl(var(--accent-secondary));
+  }
+  
+  .text-electric-blue {
+    color: hsl(var(--electric-blue));
+  }
+  
+  .text-cool-gray {
+    color: hsl(var(--cool-gray));
+  }
+  
+  .text-light-accent {
+    color: hsl(var(--light-accent));
+  }
+  
+  .bg-accent-primary {
+    background-color: hsl(var(--accent-primary));
+  }
+  
+  .bg-accent-secondary {
+    background-color: hsl(var(--accent-secondary));
+  }
+  
+  .bg-electric-blue {
+    background-color: hsl(var(--electric-blue));
+  }
+  
+  .bg-cool-gray {
+    background-color: hsl(var(--cool-gray));
+  }
+  
+  .bg-warm-gray {
+    background-color: hsl(var(--warm-gray));
+  }
+  
+  .bg-dark-bg {
+    background-color: hsl(var(--dark-bg));
+  }
+  
+  .border-accent-primary {
+    border-color: hsl(var(--accent-primary));
+  }
+  
+  .border-electric-blue {
+    border-color: hsl(var(--electric-blue));
+  }
+  
+  .border-light-accent {
+    border-color: hsl(var(--light-accent));
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .subtle-glow {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  }
+  
+  .blue-glow {
+    box-shadow: 0 0 25px hsla(var(--electric-blue), 0.3);
+  }
+  
+  .gradient-text-cool {
+    background: linear-gradient(45deg, hsl(var(--light-accent)), hsl(var(--accent-primary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .gradient-text-subtle {
+    background: linear-gradient(45deg, #ffffff, hsl(var(--accent-secondary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .gradient-text-blue {
+    background: linear-gradient(45deg, hsl(var(--electric-blue)), #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .gradient-bg-dark {
+    background: linear-gradient(135deg, hsl(var(--dark-bg)), hsl(var(--warm-gray)));
+  }
+  
+  .gradient-bg-cool {
+    background: linear-gradient(135deg, hsl(var(--cool-gray)), hsl(var(--accent-primary)));
+  }
+  
+  .gradient-bg-subtle {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--neon-purple));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--neon-pink));
+}
